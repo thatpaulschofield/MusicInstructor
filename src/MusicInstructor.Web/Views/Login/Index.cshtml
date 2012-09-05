@@ -1,0 +1,14 @@
+﻿@model MusicInstructor.Web.Models.LoginModel
+
+@{
+}
+
+
+    <div>
+        <form action="/LogIn/LogIn">
+            <div class="editor-field">@Html.TextBoxFor(x => x.UserName)</div>
+            <div class="editor-field">@Html.TextBoxFor(x => x.Password)</div>
+            <input type="submit" value="Submit" />
+        </form>
+        @Html.ActionLink("Register", "Index", "Registration")
+    </div>

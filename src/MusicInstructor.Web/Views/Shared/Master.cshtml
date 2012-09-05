@@ -1,0 +1,21 @@
+﻿
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+        <div id="header">
+            @{ Html.RenderAction("Index", "AuthenticatedUser"); }
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+    </body>
+</html>
