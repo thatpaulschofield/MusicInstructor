@@ -13,6 +13,8 @@ namespace MusicInstructor.Web.App_Start
         public static void Configure()
         {
             Mapper.CreateMap<RegistrationModel, Login>();
+            Mapper.CreateMap<RegistrationModel, UserProfile>();
+
         }
     }
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
 using MusicInstructor.Web;
 using MusicInstructor.Web.Controllers;
 using MusicInstructor.Web.Domain;
@@ -9,7 +8,6 @@ using NUnit.Framework;
 using Raven.Client;
 using Raven.Client.Embedded;
 using Raven.Client.Linq;
-using SpecsFor;
 using Should;
 using MvcContrib.ActionResults;
 using StructureMap;
@@ -17,12 +15,9 @@ using StructureMap.Configuration.DSL.Expressions;
 
 namespace MusicInstructor.Tests.LoggingIn
 {
-    public class When_I_log_in_successfully : SpecsFor<LoginController>
+    public class When_I_log_in_successfully : AbstractSpecsFor<LoginController>
     {
-        private IDocumentSession _session;
-        private ActionResult _result;
-        private IAuthenticationSession _authenticationSession;
-
+        
         protected override void ConfigureContainer(IContainer container)
         {
             container.Configure(x =>
@@ -32,32 +27,32 @@ namespace MusicInstructor.Tests.LoggingIn
                                     });
             base.ConfigureContainer(container);
             container.SetDefaultsToProfile("UnitTests");
-            _session = container.GetInstance<IDocumentSession>();
-            _authenticationSession = container.GetInstance<IAuthenticationSession>();
+            Session = container.GetInstance<IDocumentSession>();
+            AuthenticationSession = container.GetInstance<IAuthenticationSession>();
         }
 
         protected override void Given()
         {
-            _session.Store(new Login { Id = new Guid("{0840F41C-C6F5-41BC-825B-57FB086BBCF5}"), UserName = "test@user.com", Password = "password" });
-            _session.SaveChanges();
+            Session.Store(new Login { Id = new Guid("{0840F41C-C6F5-41BC-825B-57FB086BBCF5}"), UserName = "test@user.com", Password = "password" });
+            Session.SaveChanges();
         }
 
         protected override void When()
         {
-            _result = SUT.LogIn(new LoginModel {UserName = "test@user.com", Password = "password"});
+            Result = SUT.LogIn(new LoginModel {UserName = "test@user.com", Password = "password"});
         }
 
         [Test]
         public void Should_redirect_to_dashboard()
         {
-            _result.ShouldBeType<RedirectToRouteResult<DashboardController>>();
+            Result.ShouldBeType<RedirectToRouteResult<DashboardController>>();
 
         }
 
         [Test]
         public void Should_start_a_login_session()
         {
-            _authenticationSession.Id.ShouldEqual("0840F41C-C6F5-41BC-825B-57FB086BBCF5".ToLower());
+            AuthenticationSession.Id.ShouldEqual("0840F41C-C6F5-41BC-825B-57FB086BBCF5".ToLower());
         }
     }
 }

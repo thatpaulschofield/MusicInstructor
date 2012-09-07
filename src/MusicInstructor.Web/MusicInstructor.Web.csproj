@@ -131,6 +131,7 @@
     <Compile Include="DependencyResolution\SmDependencyResolver.cs" />
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Domain\Login.cs" />
+    <Compile Include="Domain\UserProfile.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

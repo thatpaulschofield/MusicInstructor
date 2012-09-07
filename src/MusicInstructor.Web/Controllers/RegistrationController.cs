@@ -28,6 +28,8 @@ namespace MusicInstructor.Web.Controllers
         public ActionResult Register(RegistrationModel registration)
         {
             _documentSession.Store(Mapper.Map<RegistrationModel, Login>(registration));
+            _documentSession.Store(Mapper.Map<RegistrationModel, UserProfile>(registration));
+
             _documentSession.SaveChanges();
 
             return this.RedirectToAction<DashboardController>(c => c.Index());

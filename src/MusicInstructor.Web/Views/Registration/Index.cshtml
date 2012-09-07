@@ -8,8 +8,11 @@
 <h2>Registration</h2>
     <div>
         <form action="/Registration/Register" method="POST">
-            <div class="editor-field">@Html.TextBoxFor(x => x.UserName)</div>
-            <div class="editor-field">@Html.TextBoxFor(x => x.Password)</div>
+            <div class="editor-field">@Html.LabelFor(x => x.FirstName) @Html.TextBoxFor(x => x.FirstName)</div>
+            <div class="editor-field">@Html.LabelFor(x => x.LastName) @Html.TextBoxFor(x => x.LastName)</div>
+            <div class="editor-field">@Html.LabelFor(x => x.UserName) @Html.TextBoxFor(x => x.UserName)</div>
+            <div class="editor-field">@Html.LabelFor(x => x.Password) @Html.TextBoxFor(x => x.Password)</div>
+
             @Html.HiddenFor(x => x.Id)
             <input type="submit" value="Submit" />
         </form>

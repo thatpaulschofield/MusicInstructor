@@ -37,17 +37,15 @@ namespace MusicInstructor.Web
                                                                             }
                 );
             For<IAuthenticationSession>().HybridHttpOrThreadLocalScoped().Use<CookieAuthenticationSession>();
-            For<ProfileViewModel>().Use(c =>
+            For<UserProfile>().Use(c =>
                                             {
                                                 var uid = c.GetInstance<IAuthenticationSession>();
-                                                if (uid.Id == null) return ProfileViewModel.NullProfile;
+                                                if (uid.Id == null) return UserProfile.NullProfile;
 
                                                 var authenticatedUserId = new Guid(uid.Id);
                                                 return c.GetInstance<IDocumentSession>()
-                                                           .Query<Login>()
-                                                           .Where(l => l.Id == authenticatedUserId)
-                                                           .AsProjection<ProfileViewModel>().FirstOrDefault() ??
-                                                       ProfileViewModel.NullProfile
+                                                           .Load<UserProfile>(authenticatedUserId)
+                                                       ?? UserProfile.NullProfile
                                                     ;
                                             });
             For<Login>().Use(ResolveEntityByUserId<Login>);

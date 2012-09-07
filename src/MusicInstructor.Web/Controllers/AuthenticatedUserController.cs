@@ -10,10 +10,10 @@ namespace MusicInstructor.Web.Controllers
 {
     public class AuthenticatedUserController : Controller
     {
-        private readonly ProfileViewModel _profile;
+        private readonly UserProfile _profile;
         //
         // GET: /Authenticated/
-        public AuthenticatedUserController(ProfileViewModel profile)
+        public AuthenticatedUserController(UserProfile profile)
         {
             _profile = profile;
         }
