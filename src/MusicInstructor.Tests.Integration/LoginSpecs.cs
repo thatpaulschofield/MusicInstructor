@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using MusicInstructor.Web.Controllers;
+﻿using MusicInstructor.Web.Controllers;
 using MusicInstructor.Web.Models;
 using MvcContrib.TestHelper;
 using NUnit.Framework;
-using OpenQA.Selenium;
 using SpecsFor;
 using SpecsFor.Mvc;
 
-namespace MusicInstructor.Tests
+namespace MusicInstructor.Tests.Integration
 {
+    [Category("Integration")]
     public class LoginSpecs : SpecsFor<MvcWebApp>
     {
         protected override void Given()

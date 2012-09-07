@@ -10,6 +10,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{B4FF2B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicInstructor.Web", "MusicInstructor.Web\MusicInstructor.Web.csproj", "{E8760367-786D-48E7-8E92-EB846CC3EB18}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MusicInstructor.Tests.Integration", "MusicInstructor.Tests.Integration\MusicInstructor.Tests.Integration.csproj", "{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,12 @@ Global
 		{E8760367-786D-48E7-8E92-EB846CC3EB18}.Integration|Any CPU.Build.0 = Integration|Any CPU
 		{E8760367-786D-48E7-8E92-EB846CC3EB18}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E8760367-786D-48E7-8E92-EB846CC3EB18}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}.Integration|Any CPU.ActiveCfg = Release|Any CPU
+		{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}.Integration|Any CPU.Build.0 = Release|Any CPU
+		{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C069F8E9-8B35-4CF8-B18F-89AD8AF9C04E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,6 +7,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using MusicInstructor.Web.App_Start;
+using StructureMap;
 
 namespace MusicInstructor.Web
 {
@@ -27,6 +28,11 @@ namespace MusicInstructor.Web
             RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             AutoMapperConfig.Configure();
+            //InitializeContainer();
+        }
+        public void InitializeContainer()
+        {
+            StructuremapMvc.Start();
         }
     }
 }

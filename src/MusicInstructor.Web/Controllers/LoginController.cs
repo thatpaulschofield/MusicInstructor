@@ -31,7 +31,7 @@ namespace MusicInstructor.Web.Controllers
 
         public ActionResult LogIn(LoginModel request)
         {
-            var login = _documentSession.Query<Login>().SingleOrDefault(l => l.UserName == request.UserName && l.Password == request.Password);
+            var login = _documentSession.Query<Login>().FirstOrDefault(l => l.UserName == request.UserName && l.Password == request.Password);
             if (login == null)
                 return View("Index", request);
 

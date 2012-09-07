@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 using SpecsFor;
 using SpecsFor.Mvc;
 
-namespace MusicInstructor.Tests
+namespace MusicInstructor.Tests.Integration
 {
+    [Category("Integration")]
     public class RegistrationSpecs : SpecsFor<MvcWebApp>
     {
         protected override void Given()

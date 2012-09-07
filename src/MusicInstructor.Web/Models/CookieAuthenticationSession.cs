@@ -24,7 +24,7 @@ namespace MusicInstructor.Web.Models
 
         private static HttpCookie AuthenticatedUserIdCookie
         {
-            get { return HttpContext.Current.Request.Cookies[COOKIE_ID]; }
+            get { return HttpContext.Current.Request.Cookies[COOKIE_ID] ?? new HttpCookie(COOKIE_ID); }
         }
     }
 
