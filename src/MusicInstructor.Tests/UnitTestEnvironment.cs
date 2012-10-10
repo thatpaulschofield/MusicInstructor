@@ -1,4 +1,5 @@
-﻿using MusicInstructor.Web.Models;
+﻿using System;
+using MusicInstructor.Web.Models;
 using Raven.Client;
 using Raven.Client.Embedded;
 using StructureMap;
@@ -34,6 +35,6 @@ namespace MusicInstructor.Tests
         {
         }
 
-        public string Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

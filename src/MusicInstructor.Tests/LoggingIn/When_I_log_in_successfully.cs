@@ -4,12 +4,12 @@ using MusicInstructor.Web;
 using MusicInstructor.Web.Controllers;
 using MusicInstructor.Web.Domain;
 using MusicInstructor.Web.Models;
+using MvcContrib.ActionResults;
 using NUnit.Framework;
 using Raven.Client;
 using Raven.Client.Embedded;
 using Raven.Client.Linq;
 using Should;
-using MvcContrib.ActionResults;
 using StructureMap;
 using StructureMap.Configuration.DSL.Expressions;
 
@@ -52,7 +52,7 @@ namespace MusicInstructor.Tests.LoggingIn
         [Test]
         public void Should_start_a_login_session()
         {
-            AuthenticationSession.Id.ShouldEqual("0840F41C-C6F5-41BC-825B-57FB086BBCF5".ToLower());
+            AuthenticationSession.Id.ShouldEqual(Guid.Parse("0840F41C-C6F5-41BC-825B-57FB086BBCF5"));
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿@model MusicInstructor.Web.Models.VideoBrowserModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<form action ="Search">
+@Html.TextBoxFor(m => m.Instrument)
+@foreach (var video in Model.Videos)
+{
+  Html.RenderPartial("Video", video);
+}
+    </form>

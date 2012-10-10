@@ -1,0 +1,5 @@
+﻿@model Google.YouTube.Video
+
+@Html.LabelFor(v => v.Title);
+
+<img src='@(Model.Thumbnails[0].Url)'  />
